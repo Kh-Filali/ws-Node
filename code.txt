@@ -1,0 +1,62 @@
+// console.log("Welcom Node js ..............")
+
+const mathLib = require("./mathLib")
+
+// const sum = (a, b) => a + b
+
+// console.log(sum(5, 3))
+// console.log(process.argv)
+
+let x = +process.argv[2]
+let op = process.argv[3]
+let y = Number(process.argv[4])
+// console.log(mathLib.multiply(x, y))
+
+switch (op) {
+    case '+':
+        console.log(mathLib.sum(x, y))
+        break;
+    case '-':
+        console.log(mathLib.minus(x, y))
+        break;
+    case 'x':
+        console.log(mathLib.multiply(x, y))
+        break;
+
+    default:
+        console.log("Ouuuuuuuuuups")
+        break;
+}
+
+/***********************/
+const fs = require("fs")
+
+console.log("Start ........")
+
+// fs.readFile("./mathLib.js", (err, data) => {
+//     err ? console.log(err) : console.log(data.toString())
+// })
+const file=fs.readFileSync("./mathLib.js", "utf-8")
+console.log(file)
+
+console.log("Finish ........")
+ /****************/
+
+
+const one=()=>{
+    setTimeout(()=>{
+        console.log("one")
+    }, 200)
+}
+const two=()=>{
+    setTimeout(()=>{
+        console.log("two")
+    }, 0)
+}
+const three=()=>{
+        console.log("three")
+}
+
+one()
+two()
+three()
